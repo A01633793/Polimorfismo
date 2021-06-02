@@ -4,7 +4,7 @@ using namespace std;
 
 //constructor por default
 Fraccion::Fraccion(){
-    num= 1;
+    num= 0;
     denom= 1;
 }
 
