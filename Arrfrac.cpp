@@ -70,18 +70,34 @@ Arrfrac Arrfrac::multiplicacion(Arrfrac inArrfrac){
     }
 }
 
-//Suma de fracciones (si modifica el objeto actual) [como ejemplo alternativo de la funcion suma]
-void Arrfrac::sumaInPlace(Arrfrac inaArrfrac){
-    // Si los tamaños de los arreglos coinciden
-    if(size == inaArrfrac.getSize()){
-        for (int i=0; i<size; i++){
-            //Realiza la suma y la guarda en el objeto que llama este metodo
-            arr[i] = arr[i].suma(inaArrfrac.getFraccion(i));  
-        }
-    }else{
-        cout << "Los arreglos no tienen el mismo numero de elemetos" << endl;
+//Suma de vectores, en caso de no ser igual el mismo numero de elementos no podra ser realizada.
+ ArrFrac ArrFrac::operator + (Vect const &f2){
+  if (sizes == f2.sizes){
+  Vect nueevoVector(sizes);
+  for (int i=0; i<sizes; i++){
+
+    nueevoVector.arr[i]=arr[i]+f2.arr[i];
+  }
+  return nueevoVector;
+  }
+  else
+      cout<<"Los vectores no tienen el mismo numero elemetos" << endl;
+  return Vect();
+ }
+
+ArrFrac ArrFrac::operator - (Vect const &f2){
+  if (sizes == f2.sizes){
+  Vect nueevoVector(sizes);
+  for (int i=0; i<sizes; i++){
+ 
+    nueevoVector.arr[i]=arr[i]-f2.arr[i];
+  }
+  return nueevoVector;
+  }
+  else
+      cout<<"Los vectores no tienen el mismo numero elemetos" << endl;
+  return Vect();
     }
-}   
 
 void Arrfrac::agregarFraccion(Fraccion f){
     // Se duplica el tamaño de la memoria para evitar trasladar arreglos de elementos cada que se agrega una fraccion
