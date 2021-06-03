@@ -66,7 +66,7 @@ Fraccion Fraccion::suma(Fraccion farg){
 
 Fraccion Fraccion::multiplicacion(Fraccion farg){
     int numm = num * farg.getNumerador();
-    int den = denomr * farg.getDenominador();
+    int den = denom * farg.getDenominador();
     Fraccion fresultado(numm,den);
     return fresultado;  
 }
