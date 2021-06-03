@@ -3,6 +3,7 @@ private:
     int num;
     int denom;
 
+    
 public:
     Fraccion();
     Fraccion(int, int);
